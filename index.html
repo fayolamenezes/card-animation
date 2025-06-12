@@ -25,6 +25,10 @@
       overflow-x: hidden;
     }
 
+    .top-spacer {
+      height: 35vh; /* Adjust freely as needed */
+    }
+
     .spacer {
       height: 100vh;
     }
@@ -47,11 +51,12 @@
       display: flex;
       gap: 1.5rem;
       transform-origin: center center;
+      padding: 0 5vw;
     }
 
     .card {
-      width: 160px;
-      height: 240px;
+      width: 180px;
+      height: 180px;
       background: #fff;
       color: #000;
       border-radius: 10px;
@@ -67,6 +72,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Top spacer for extra scroll before animation starts -->
+  <div class="top-spacer"></div>
 
   <section class="card-zoom-section">
     <div class="card-zoom-inner">
@@ -99,7 +107,7 @@
         trigger: ".card-zoom-section",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1, // scrub ties animation to scroll, 1 = smoothed but responsive
+        scrub: 1,
         pin: ".card-zoom-inner",
       }
     });
@@ -136,7 +144,7 @@
       scale: 1.6
     });
 
-    // Initialize Lenis smooth scroll with crisp settings
+    // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       duration: 1.2,
       easing: t => t,
