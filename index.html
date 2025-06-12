@@ -26,7 +26,7 @@
     }
 
     .top-spacer {
-      height: 35vh; /* Adjust freely as needed */
+      height: 35vh;
     }
 
     .spacer {
@@ -49,13 +49,19 @@
 
     .card-zoom-container {
       display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 1.5rem;
+      flex-wrap: nowrap;
       transform-origin: center center;
-      padding: 0 5vw;
+      max-width: 100%;
+      padding: 0 3vw; /* safe space from edges */
     }
 
     .card {
-      width: 180px;
+      width: 12vw;
+      min-width: 150px;
+      max-width: 180px;
       height: 180px;
       background: #fff;
       color: #000;
@@ -69,11 +75,28 @@
       flex-shrink: 0;
       z-index: 1;
     }
+
+    @media (max-width: 1024px) {
+      .card {
+        width: 14vw;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 18vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 22vw;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top spacer for extra scroll before animation starts -->
   <div class="top-spacer"></div>
 
   <section class="card-zoom-section">
